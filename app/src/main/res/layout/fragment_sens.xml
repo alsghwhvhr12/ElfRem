@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.elf.remote.viewmodel.settings.SensViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/sens_top" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/button6"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/click_eq_low"
+                    android:button="@android:color/transparent"
+                    android:checked="@={viewModel.check}"
+                    android:onClick="@{()-> viewModel.lowClick()}" />
+
+                <CheckBox
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/click_eq_mid"
+                    android:button="@android:color/transparent"
+                    android:checked="@={viewModel.check2}"
+                    android:onClick="@{()-> viewModel.midClick()}" />
+
+                <CheckBox
+                    android:id="@+id/button5"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/click_eq_high"
+                    android:button="@android:color/transparent"
+                    android:checked="@={viewModel.check3}"
+                    android:onClick="@{()-> viewModel.highClick()}" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/sens_bottom" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.elf.remote.viewmodel.search.SendLoveViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_420sdp"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="5"
+                android:background="@drawable/sendlovetop">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4.2" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/click_x_btn"
+                    android:onClick="@{()-> viewModel.onExitClick()}"/>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/loveList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:listSelector="@drawable/list_sel"
+                android:choiceMode="singleChoice"
+                app:OnItemClickListener="@{viewModel.onItemClickListener}"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/click_send_btn"
+                android:onClick="@{()-> viewModel.onSendClick()}"/>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>

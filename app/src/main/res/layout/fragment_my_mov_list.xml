@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.elf.remote.viewmodel.my_video.MyMovListViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.3"
+            android:background="@drawable/gmovlsttop2"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="0dp"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="0dp"
+                android:layout_gravity="end"
+                android:layout_weight="0.8"
+                android:background="@drawable/click_x_btn"
+                android:onClick="@{()->viewModel.onExitClick()}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:text="@{viewModel.location}"
+                android:textColor="#000000" />
+
+            <CheckBox
+                android:id="@+id/mulBtn"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:button="@android:color/transparent"
+                android:background="@drawable/click_mul_btn"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/MymovList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7.9"
+            android:choiceMode="singleChoice"
+            android:listSelector="@drawable/list_sel"
+            app:items="@{viewModel.movFiles}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/click_my_movprv"
+                android:onClick="@{()-> viewModel.onPrvClick()}" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/click_gm_del"
+                android:onClick="@{()-> viewModel.onDelClick()}" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/click_gm_chg"
+                android:onClick="@{()-> viewModel.onEditClick()}" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/click_gm_share"
+                android:onClick="@{()-> viewModel.onShareClick()}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

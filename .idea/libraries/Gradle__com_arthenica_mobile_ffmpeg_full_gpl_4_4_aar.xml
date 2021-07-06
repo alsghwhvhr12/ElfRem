@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.arthenica:mobile-ffmpeg-full-gpl:4.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af37bd8dd5dbc84e542b645472e56fcb/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c5553b87dfb5e461dcd299eb056af4e0/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81553e7247fabf8fe605f9d3ef22a577/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/409b4c6ab3797300b5c4bd8f419c00fc/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b057b3c1b015314c8e78db5238c50445/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d9631c85ebfee3f4efe013899b34e02c/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35164ff69bb6fa4dd08ff41e4f149105/jetified-mobile-ffmpeg-full-gpl-4.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35164ff69bb6fa4dd08ff41e4f149105/jetified-mobile-ffmpeg-full-gpl-4.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35164ff69bb6fa4dd08ff41e4f149105/jetified-mobile-ffmpeg-full-gpl-4.4/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.arthenica/mobile-ffmpeg-full-gpl/4.4/87d0f67f6552e5fb3f40071a7ba65739caf4dd74/mobile-ffmpeg-full-gpl-4.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.arthenica/mobile-ffmpeg-full-gpl/4.4/3cc7e89f5dcb37c11089bfe2fbbcc56089bcb0e7/mobile-ffmpeg-full-gpl-4.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

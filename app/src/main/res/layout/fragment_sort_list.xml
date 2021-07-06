@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.elf.remote.viewmodel.search.SortListViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_220sdp"
+            android:background="@drawable/lvsortmethod"
+            android:orientation="vertical"
+            android:weightSum="3"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_gravity="end"
+                android:layout_weight="0.45"
+                android:background="@drawable/click_x_btn"
+                android:onClick="@{()-> viewModel.onCloseClick()}" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.04" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.06" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.91"
+                    android:background="@drawable/click_sr_lvmeup"
+                    android:onClick="@{()-> viewModel.onJaeAscClick()}" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.08" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.91"
+                    android:background="@drawable/click_sr_lvmed"
+                    android:onClick="@{()-> viewModel.onRegClick()}" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.08" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.91"
+                    android:background="@drawable/click_sr_lvmegup"
+                    android:onClick="@{()-> viewModel.onSingAscClick()}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.11"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.545" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.94"
+                    android:background="@drawable/click_sr_lvmedn"
+                    android:onClick="@{()-> viewModel.onJaeDscClick()}" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.94"
+                    android:background="@drawable/click_sr_lvmegdn"
+                    android:onClick="@{()-> viewModel.onSingDscClick()}" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

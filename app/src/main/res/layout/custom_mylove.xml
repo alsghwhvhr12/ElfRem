@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.elf.remote.utils.Checkable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E5E5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+    <CheckBox
+        android:id="@+id/chk"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/lovCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_6sdp"
+        android:textColor="#990099"
+        android:textSize="@dimen/_16sdp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/lovTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#888800"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/loveMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#009900"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+    </LinearLayout>
+
+</com.elf.remote.utils.Checkable>

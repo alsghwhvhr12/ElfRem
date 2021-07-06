@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.elf.remote.viewmodel.settings.SettingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/optiong"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scroll1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/synthesis"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:onClick="@{()-> viewModel.onSycClick()}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/saveV"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:onClick="@{()-> viewModel.onLoadClick()}" />
+
+                <View
+                    android:id="@+id/saveLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <Button
+                    android:id="@+id/load"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/loadV"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:onClick="@{()-> viewModel.onSaveClick()}" />
+
+                <View
+                    android:id="@+id/loadLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <Button
+                    android:id="@+id/speaker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/speaker"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    android:onClick="@{()-> viewModel.onSpeakerClick()}" />
+
+                <View
+                    android:id="@+id/speakerLine"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/time_set"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:onClick="@{()-> viewModel.onTimeSetClick()}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingEnd="0dp"
+                        android:text="@string/version"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:onClick="@{()-> viewModel.onVersionClick()}" />
+
+                    <TextView
+                        android:id="@+id/version_txt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="#000"
+                        android:textSize="20sp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:gravity="end|center"
+                        android:text="버전이다옹123" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

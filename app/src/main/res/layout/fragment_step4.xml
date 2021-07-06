@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.elf.remote.viewmodel.settings.Step4ViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/stepback2">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:onClick="@{()-> viewModel.finishClick()}"
+            android:background="@drawable/click_eq_sens_end"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <Button
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:onClick="@{()-> viewModel.sensClick()}"
+            android:background="@drawable/click_eq_sensp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="실시간으로 주파수를 분석하고 있습니다."
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:onClick="@{()-> viewModel.exitClick()}"
+            android:background="@drawable/click_eq_sens_out"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinner_back"
+            android:gravity="center"
+            android:text="@{viewModel.volume}"
+            android:textColor="#000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/spinner_back"
+            android:max="127"
+            android:progress="@{viewModel.volumePro}"
+            app:OnSeekBarChangeListener="@{viewModel.seekBarChangeListener}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="12dB"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView6" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6dB"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/tv3"
+            app:layout_constraintEnd_toEndOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0dB"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/tv4"
+            app:layout_constraintEnd_toEndOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-6dB"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/tv5"
+            app:layout_constraintEnd_toEndOf="@+id/tv1"
+            app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-12dB"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/tv4" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/hz1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv1"
+            app:layout_constraintTop_toBottomOf="@id/textView6">
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="#000000" />
+
+            <ProgressBar
+                android:id="@+id/pro1"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp" />
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="#000000" />
+
+            <ProgressBar
+                android:id="@+id/pro2"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro3"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro4"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro5"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro6"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro7"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro8"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro9"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro10"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro11"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro12"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro13"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro14"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro15"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro16"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro17"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro18"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro19"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro20"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro21"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro22"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro23"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro24"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro25"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro26"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro27"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro28"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro29"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro30"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro31"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/pro32"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="@id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
+        <TextView
+            android:id="@+id/hz1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_27sdp"
+            android:text="20Hz"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv5" />
+
+        <TextView
+            android:id="@+id/hz2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="630Hz"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toEndOf="@+id/hz1" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20KHz"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
