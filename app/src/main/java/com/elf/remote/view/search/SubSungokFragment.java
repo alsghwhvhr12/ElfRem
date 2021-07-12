@@ -1,6 +1,8 @@
 package com.elf.remote.view.search;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +46,8 @@ public class SubSungokFragment extends DialogFragment implements SubCall {
 
         model.onCreate();
         setCancelable(false);
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (model.kind == 2) {
             binding.editBtn.setBackgroundResource(R.drawable.click_sub_rsedit);

@@ -1,6 +1,8 @@
 package com.elf.remote.view.search;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +42,8 @@ public class SLoveAddFragment extends DialogFragment implements SubCall {
         setCancelable(false);
 
         model.onCreate();
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (model.loveKind.equals("myLove")) {
             binding.titleLove.setBackgroundResource(R.drawable.glmylv_topbar);

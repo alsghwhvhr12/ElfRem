@@ -2,6 +2,8 @@ package com.elf.remote.view.my_recorded;
 
 import android.content.Context;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
@@ -53,6 +55,8 @@ public class RecOkFragment extends DialogFragment implements SubCall {
         if (VerSionMachin.getName().equals("G10"))
             binding.bakcBase.setBackgroundResource(R.drawable.usblinkchkg);
         else binding.bakcBase.setBackgroundResource(R.drawable.usblinkchk);
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Bundle bundle = getArguments();
         String mov = null;

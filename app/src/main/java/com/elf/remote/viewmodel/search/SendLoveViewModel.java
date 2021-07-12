@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import androidx.databinding.BaseObservable;
 
@@ -218,6 +219,7 @@ public class SendLoveViewModel extends BaseObservable implements BaseViewModel {
     public void hideProgressDialog() {
         progressDialog.dismiss();
         bluetoothCon.getSendFragment(null);
+        Toast.makeText(Application.applicationContext(), "완료되었습니다.", Toast.LENGTH_SHORT).show();
     }
 
     public void updateProgressDialog(int i) {

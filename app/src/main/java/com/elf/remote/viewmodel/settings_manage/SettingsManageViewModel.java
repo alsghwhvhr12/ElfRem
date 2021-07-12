@@ -1,6 +1,7 @@
 package com.elf.remote.viewmodel.settings_manage;
 
 import android.app.ProgressDialog;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.BaseObservable;
@@ -90,6 +91,7 @@ public class SettingsManageViewModel extends BaseObservable implements BaseViewM
             builder.setMessage("파일이 이미 존재합니다.\n덮어씌우시겠습니까?");
             builder.setNegativeButton("취소",
                     (dialog, which) -> {
+                        navi.exitActivity();
                     });
             builder.setPositiveButton("확인",
                     (dialog, which) -> {
@@ -156,6 +158,7 @@ public class SettingsManageViewModel extends BaseObservable implements BaseViewM
 
     public void hideProgressDialog() {
         progressBar2.dismiss();
+        Toast.makeText(Application.applicationContext(), "완료되었습니다.", Toast.LENGTH_SHORT).show();
         bluetoothCon.getFragment(null);
         if (i == 2) {
             navi.exitActivity();

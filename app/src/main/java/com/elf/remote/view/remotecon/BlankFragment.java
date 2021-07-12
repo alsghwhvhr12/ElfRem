@@ -1,6 +1,8 @@
 package com.elf.remote.view.remotecon;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +42,7 @@ public class BlankFragment extends DialogFragment implements ejoButton {
                              Bundle savedInstanceState) {
         View view;
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 
         if (BtDevice.getDevice() == null) {
             FragmentBlankBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_blank, container, false);
@@ -60,6 +62,8 @@ public class BlankFragment extends DialogFragment implements ejoButton {
                 view = binding.getRoot();
             }
         }
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         setCancelable(false);
         return view;

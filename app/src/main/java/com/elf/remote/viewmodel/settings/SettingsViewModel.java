@@ -43,7 +43,7 @@ public class SettingsViewModel extends BaseObservable {
         navi.dleList();
     }
 
-    public void onVersionClick() {
+    public void onKokClick() {
         navi.selList();
     }
 
@@ -109,6 +109,7 @@ public class SettingsViewModel extends BaseObservable {
             builder.setMessage("파일이 이미 존재합니다.\n덮어씌우시겠습니까?");
             builder.setNegativeButton("취소",
                     (dialog, which) -> {
+                        navi.shareList();
                     });
             builder.setPositiveButton("확인",
                     (dialog, which) -> {

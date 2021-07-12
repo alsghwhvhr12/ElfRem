@@ -1,6 +1,8 @@
 package com.elf.remote.view.search;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +34,8 @@ public class SungokStartFragment extends DialogFragment implements SubCall {
         binding.setViewModel(new SungokStartViewModel(this));
         binding.executePendingBindings();
         setCancelable(false);
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         // Inflate the layout for this fragment
         return binding.getRoot();

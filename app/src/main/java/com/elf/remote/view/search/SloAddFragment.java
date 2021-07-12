@@ -1,6 +1,8 @@
 package com.elf.remote.view.search;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +52,8 @@ public class SloAddFragment extends DialogFragment implements CallActivity {
         } else {
             binding.grpnm.setBackgroundResource(R.drawable.grpnmchgbk);
         }
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         binding.editTitle.setText(title);
         binding.editMemo.setText(memo);

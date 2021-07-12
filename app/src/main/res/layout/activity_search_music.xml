@@ -227,24 +227,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
                     android:background="@drawable/slvlstctrlbott"
-                    android:weightSum="2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent">
 
                     <Button
                         style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/click_sr_addset"
-                        android:onClick="@{()-> viewModel.onAddSetClick()}" />
-
-                    <Button
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:background="@drawable/click_sr_rmt"
                         android:onClick="@{()-> viewModel.onRmtClick()}" />
 

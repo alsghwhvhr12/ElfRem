@@ -360,6 +360,7 @@ public class SettingsManage extends AppCompatActivity implements CallActivity {
                 builder.setMessage("파일이 이미 존재합니다.\n덮어씌우시겠습니까?");
                 builder.setNegativeButton("취소",
                         (dialog, which) -> {
+                            exitActivity();
                         });
                 Uri finalUri = uri;
                 builder.setPositiveButton("확인",

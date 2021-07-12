@@ -78,4 +78,5 @@
     <string name="sens">마이크 감도</string>
     <string name="saveV">애창곡 기기로 전송</string>
     <string name="loadV">애창곡 기기에서 받아오기</string>
+    <string name="kok">곡 목록 관리</string>
 </resources>

@@ -72,8 +72,8 @@
             android:layout_marginRight="@dimen/_15sdp"
             android:layout_weight="7.5"
             android:background="@drawable/mainbkblack"
-            android:paddingStart="@dimen/_10sdp"
-            android:paddingTop="@dimen/_10sdp"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingTop="@dimen/_4sdp"
             android:paddingEnd="0dp">
 
             <LinearLayout

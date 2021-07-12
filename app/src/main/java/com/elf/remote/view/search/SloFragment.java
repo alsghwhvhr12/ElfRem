@@ -2,6 +2,8 @@ package com.elf.remote.view.search;
 
 import android.app.Dialog;
 import android.content.ContentValues;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -49,6 +51,8 @@ public class SloFragment extends DialogFragment implements SubCall {
         setCancelable(false);
 
         model.onCreate();
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (VerSionMachin.getName().equals("919")) {
             binding.SendBtn.setVisibility(View.VISIBLE);
@@ -119,6 +123,8 @@ public class SloFragment extends DialogFragment implements SubCall {
                         bundle1.putString("loveKind", model.loveKind);
                         ts.setArguments(bundle1);
                         ts.show(getChildFragmentManager(), "timeSet");
+                    } else {
+                        Toast.makeText(getContext(), "목록을 선택 후 버튼을 클릭해 주세요.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     sp = binding.loveList.getCheckedItemPositions();
@@ -140,6 +146,8 @@ public class SloFragment extends DialogFragment implements SubCall {
                             ts.setArguments(bundle1);
                             ts.show(getChildFragmentManager(), "timeSet");
                         }
+                    } else {
+                        Toast.makeText(getContext(), "목록을 선택 후 버튼을 클릭해 주세요.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

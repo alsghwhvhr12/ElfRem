@@ -1,6 +1,8 @@
 package com.elf.remote.view.search;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -42,6 +44,7 @@ public class JKindFragment extends DialogFragment implements SubCall {
         Window window = Objects.requireNonNull(getDialog()).getWindow();
         window.setGravity(Gravity.START | Gravity.TOP);
 
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         WindowManager.LayoutParams params = window.getAttributes();
         params.x = 30;

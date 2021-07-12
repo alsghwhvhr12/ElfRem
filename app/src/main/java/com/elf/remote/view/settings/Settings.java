@@ -30,6 +30,7 @@ import com.elf.remote.model.bluetooth.BluetoothCon;
 import com.elf.remote.model.bluetooth.BtDevice;
 import com.elf.remote.model.data.VerSionMachin;
 import com.elf.remote.view.banjugi.BanConnect;
+import com.elf.remote.view.search.ManageFragment;
 import com.elf.remote.view.search.TimeSetFragment;
 import com.elf.remote.view.settings_manage.SaveNameFragment;
 import com.elf.remote.viewmodel.settings.SettingsViewModel;
@@ -156,7 +157,8 @@ public class Settings extends AppCompatActivity implements ListEdit {
 
     @Override
     public void selList() {
-
+        ManageFragment add = ManageFragment.getInstance();
+        add.show(getSupportFragmentManager(), "addSet");
     }
 
     private void saveVideoFile(String name, String saveF) {
@@ -203,6 +205,7 @@ public class Settings extends AppCompatActivity implements ListEdit {
                 builder.setMessage("파일이 이미 존재합니다.\n덮어씌우시겠습니까?");
                 builder.setNegativeButton("취소",
                         (dialog, which) -> {
+                            shareList();
                         });
                 Uri finalUri = uri;
                 builder.setPositiveButton("확인",

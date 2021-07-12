@@ -3,6 +3,8 @@ package com.elf.remote.view.banjugi;
 import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +55,7 @@ public class BanListEditFragment extends DialogFragment implements CallActivity 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         bluetoothDevices = new ArrayList<>();
-
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dataPaired = new ArrayList<>();
         adapterPaired = new SimpleAdapter(getContext(), dataPaired, android.R.layout.simple_list_item_1, new String[]{"name"}, new int[]{android.R.id.text1});
         binding.editDevice.setAdapter(adapterPaired);

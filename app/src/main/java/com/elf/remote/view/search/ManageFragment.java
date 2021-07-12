@@ -10,6 +10,8 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -57,6 +59,8 @@ public class ManageFragment extends DialogFragment implements CallActivity {
         binding.bkmanage.setBackgroundResource(R.drawable.sdbphonesvbk);
         binding.sdBtn1.setBackgroundResource(R.drawable.click_sr_sdphone);
         binding.sdBtn2.setBackgroundResource(R.drawable.click_sr_sdapp);
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         setCancelable(false);
 
@@ -123,6 +127,7 @@ public class ManageFragment extends DialogFragment implements CallActivity {
             builder.setMessage("파일이 이미 존재합니다.\n덮어씌우시겠습니까?");
             builder.setNegativeButton("취소",
                     (dialog, which) -> {
+                        callDialog();
                     });
             builder.setPositiveButton("확인",
                     (dialog, which) -> {
@@ -205,6 +210,7 @@ public class ManageFragment extends DialogFragment implements CallActivity {
                 builder.setMessage("파일이 이미 존재합니다.\n덮어씌우시겠습니까?");
                 builder.setNegativeButton("취소",
                         (dialog, which) -> {
+                            callDialog();
                         });
                 Uri finalUri = uri;
                 builder.setPositiveButton("확인",
@@ -313,9 +319,9 @@ public class ManageFragment extends DialogFragment implements CallActivity {
     public void dialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-            builder.setMessage("곡목록 관리는 애창곡과 예약곡을 스마트폰 내장메모리/Download/ElfDb에 mylove.db, myresv.db로 저장하고 읽어오는 기능입니다.");
+            builder.setMessage("곡목록 관리는 애창곡과 예약곡을 스마트폰 내장메모리/Download/favorite mylove.db, myresv.db로 저장하고 읽어오는 기능입니다.");
         } else {
-            builder.setMessage("곡목록 관리는 애창곡과 예약곡을 스마트폰 내장메모리/ElfData에 mylove.db, myresv.db로 저장하고 읽어오는 기능입니다.");
+            builder.setMessage("곡목록 관리는 애창곡과 예약곡을 스마트폰 내장메모리/ElfData/favorite에 mylove.db, myresv.db로 저장하고 읽어오는 기능입니다.");
         }
         builder.setNegativeButton("확인",
                 (dialog, which) -> {

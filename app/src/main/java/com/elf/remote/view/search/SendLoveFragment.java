@@ -3,6 +3,8 @@ package com.elf.remote.view.search;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,6 +49,8 @@ public class SendLoveFragment extends DialogFragment implements CallActivity {
         model.onCreate();
 
         binding.loveList.setAdapter(model.loveCountAdapter);
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (model.loveCounts.size() == 0) {
             dismiss();

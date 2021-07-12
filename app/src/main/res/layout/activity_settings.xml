@@ -99,6 +99,26 @@
                     android:layout_marginEnd="@dimen/_15sdp"/>
 
                 <Button
+                    android:id="@+id/kok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/kok"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:onClick="@{()-> viewModel.onKokClick()}" />
+
+                <View
+                    android:id="@+id/kokLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E5E5E5"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <Button
                     android:id="@+id/speaker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -153,8 +173,7 @@
                         android:text="@string/version"
                         android:textAlignment="textStart"
                         android:textSize="20sp"
-                        android:textColor="#000"
-                        android:onClick="@{()-> viewModel.onVersionClick()}" />
+                        android:textColor="#000" />
 
                     <TextView
                         android:id="@+id/version_txt"

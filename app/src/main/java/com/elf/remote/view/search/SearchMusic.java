@@ -13,6 +13,7 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -295,6 +296,8 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
                         bundle1.putString("loveKind", loveKind);
                         ts.setArguments(bundle1);
                         ts.show(getSupportFragmentManager(), "timeSet");
+                    } else {
+                        Toast.makeText(this, "목록을 선택 후 버튼을 클릭해 주세요.", Toast.LENGTH_SHORT).show();
                     }
                 }
             } else {
@@ -322,6 +325,8 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
                         ts.setArguments(bundle1);
                         ts.show(getSupportFragmentManager(), "timeSet");
                     }
+                } else {
+                    Toast.makeText(this, "목록을 선택 후 버튼을 클릭해 주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -607,8 +612,6 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
     @Override
     public void addSetCall() {
-        ManageFragment add = ManageFragment.getInstance();
-        add.show(getSupportFragmentManager(), "addSet");
     }
 
     @Override
@@ -656,6 +659,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
                     loveAdapter.setChecked(checked - 1);
                     loveAdapter.notifyDataSetChanged();
+                } else if (checked == 0) {
+                    Toast.makeText(this, "첫번째 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 if (checked > 0) {
@@ -673,6 +680,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
                     customerAdapter.setChecked(checked - 1);
                     customerAdapter.notifyDataSetChanged();
+                } else if (checked == 0) {
+                    Toast.makeText(this, "첫번째 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -698,6 +709,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
                     loveAdapter.setChecked(checked + 1);
                     loveAdapter.notifyDataSetChanged();
+                } else if (checked + 1 >= loveAdapter.getCount()) {
+                    Toast.makeText(this, "마지막 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 if (checked + 1 < customerAdapter.getCount() && checked >= 0) {
@@ -715,6 +730,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
                     customerAdapter.setChecked(checked + 1);
                     customerAdapter.notifyDataSetChanged();
+                } else if (checked + 1 >= loveAdapter.getCount()) {
+                    Toast.makeText(this, "마지막 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -751,6 +770,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
                     loveAdapter.setChecked(top);
                     loveAdapter.notifyDataSetChanged();
+                } else if (checked == 0) {
+                    Toast.makeText(this, "첫번째 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 if (checked != top && checked >= 0) {
@@ -778,6 +801,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
 
                     customerAdapter.setChecked(top);
                     customerAdapter.notifyDataSetChanged();
+                } else if (checked == 0) {
+                    Toast.makeText(this, "첫번째 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -816,6 +843,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
                         loveAdapter.setChecked(bot);
                         loveAdapter.notifyDataSetChanged();
                     }
+                } else if (checked + 1 >= loveAdapter.getCount()) {
+                    Toast.makeText(this, "마지막 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 if (checked >= 0) {
@@ -846,6 +877,10 @@ public class SearchMusic extends AppCompatActivity implements SearchSong {
                         customerAdapter.setChecked(bot);
                         customerAdapter.notifyDataSetChanged();
                     }
+                } else if (checked + 1 >= loveAdapter.getCount()) {
+                    Toast.makeText(this, "마지막 목록입니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "목록을 선택하거나 다중선택 모드를 해제하세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         }

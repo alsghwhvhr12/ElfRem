@@ -47,6 +47,7 @@
                 android:layout_weight="8"
                 android:listSelector="@drawable/list_sel"
                 android:choiceMode="singleChoice"
+                android:background="#ffffff"
                 app:OnItemClickListener="@{viewModel.onItemClickListener}"/>
 
             <Button

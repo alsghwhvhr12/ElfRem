@@ -3,6 +3,8 @@ package com.elf.remote.view.my_recorded;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.usb.UsbDevice;
 import android.net.Uri;
 import android.os.Build;
@@ -64,6 +66,8 @@ public class UsbPerFragment extends DialogFragment {
             name = bundle.getString("name");
             device = bundle.getParcelable("device");
         }
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         con.setOnClickListener(v1 -> getUsbStoragePer(name));
 

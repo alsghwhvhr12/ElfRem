@@ -2,6 +2,8 @@ package com.elf.remote.view.search;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +51,8 @@ public class SungokFragment extends DialogFragment implements SungokCall {
         setCancelable(false);
 
         model.onCreate();
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         if (BtDevice.getDevice() == null) {
             binding.tempo.setEnabled(false);

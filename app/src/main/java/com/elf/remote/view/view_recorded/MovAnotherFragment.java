@@ -2,6 +2,8 @@ package com.elf.remote.view.view_recorded;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -51,6 +53,8 @@ public class MovAnotherFragment extends DialogFragment implements CallActivity {
             path2 = bundle.getString("path2");
             Fname = bundle.getString("Fname");
         }
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         int x = path.indexOf(Fname);
         File path = new File(this.path.substring(0, x));

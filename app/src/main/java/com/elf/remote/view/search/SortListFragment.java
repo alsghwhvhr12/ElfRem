@@ -1,6 +1,8 @@
 package com.elf.remote.view.search;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -40,6 +42,8 @@ public class SortListFragment extends DialogFragment implements SubCall {
 
         Window window = Objects.requireNonNull(getDialog()).getWindow();
         window.setGravity(Gravity.CENTER | Gravity.BOTTOM);
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         WindowManager.LayoutParams params = window.getAttributes();
         params.x = 0;

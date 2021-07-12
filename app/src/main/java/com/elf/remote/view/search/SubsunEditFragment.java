@@ -2,6 +2,8 @@ package com.elf.remote.view.search;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +46,8 @@ public class SubsunEditFragment extends DialogFragment implements SubCall {
         if (bundle != null) {
             kind = bundle.getInt("kind");
         }
+
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         binding.interval.setSelected(true);
 
